@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "date": "2023-04-13",
+      "description": "Bying some fruites",
+      "amount": "300",
+      "id": 1
+    },
+    {
+      "date": "2023-04-20",
+      "description": "Bying some carrots",
+      "amount": "400",
+      "id": 2
+    },
+    {
+      "date": "2023-04-21",
+      "description": "Bying some vegitables",
+      "amount": "500",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
