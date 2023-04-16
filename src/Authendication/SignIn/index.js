@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Button, Paper, IconButton, InputLabel } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -23,7 +23,7 @@ export default function SignIn() {
   });
 
   const inputRef = useRef({});
-  const navigate = useNavigate();
+  const navigate = Navigate();
 
   const handleChange = (e) => {
     setInputErrors("");
@@ -79,7 +79,7 @@ export default function SignIn() {
   };
 
   return (
-    <div>
+    <div data-test-id="test-01">
       <Paper
         sx={{
           width: 500,
@@ -87,7 +87,7 @@ export default function SignIn() {
           textAlign: "center",
           marginTop: "100px",
           marginLeft: "400px",
-          border:"#1e2021"
+          border: "#1e2021",
         }}
         elevation={10}
       >
@@ -117,6 +117,7 @@ export default function SignIn() {
               errorText={inputErrors.emailError}
               style={{ width: "284px" }}
               errorColor={{ color: "red", fontSize: "12px" }}
+              dataTestid={"text-input-element"}
             />
           </div>
           <br />
@@ -150,6 +151,7 @@ export default function SignIn() {
               }}
               errorText={inputErrors.passwordError}
               errorColor={{ color: "red", fontSize: "12px" }}
+              dataTestid={"password-input-element"}
             />
           </div>
           <Link
@@ -169,6 +171,7 @@ export default function SignIn() {
             style={{ textTransform: "none", width: "100px" }}
             color="primary"
             variant="contained"
+            dataTestid={"login-button-element"}
           >
             {loading ? "Loading..." : "Sign In"}
           </Button>
