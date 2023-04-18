@@ -1,7 +1,13 @@
 {
   "posts": [
     {
-      "date": "2023-04-04",
+      "date": "2023-04-13",
+      "description": "Bying some fruites",
+      "amount": "300",
+      "id": 1
+    },
+    {
+      "date": "2023-04-20",
       "description": "Bying some carrots",
       "amount": "400",
       "id": 2
@@ -11,18 +17,11 @@
       "description": "Bying some vegitables",
       "amount": "500",
       "id": 3
-    },
-    {
-      "date": "2023-04-18",
-      "description": "red",
-      "amount": "60",
-      "id": 4
     }
   ],
   "comments": [],
   "login": {
-    "email": "anand",
-    "password": "123"
+    "token": "QpwL5tke4Pnpja7X4"
   },
   "profile": {
     "name": "typicode"

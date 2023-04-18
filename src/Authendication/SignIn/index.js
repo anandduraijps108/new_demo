@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
-import { Link, Navigate } from "react-router-dom";
+import { Link,
+   useNavigate
+   } from "react-router-dom";
 import { Button, Paper, IconButton, InputLabel } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -23,7 +25,7 @@ export default function SignIn() {
   });
 
   const inputRef = useRef({});
-  const navigate = Navigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInputErrors("");
@@ -49,7 +51,7 @@ export default function SignIn() {
   const handleLogin = () => {
     setLoading(true);
     axios
-      .post("https://reqres.in/api/login", inputValues)
+      .post("http://localhost:3000/login", inputValues)
       .then((res) => {
         localStorage.setItem("token", res?.data?.token);
         navigate("/");
@@ -79,7 +81,7 @@ export default function SignIn() {
   };
 
   return (
-    <div data-test-id="test-01">
+    <div data-test-id ="test-01">
       <Paper
         sx={{
           width: 500,
@@ -87,14 +89,14 @@ export default function SignIn() {
           textAlign: "center",
           marginTop: "100px",
           marginLeft: "400px",
-          border: "#1e2021",
+          border:"#1e2021"
         }}
         elevation={10}
       >
         <AccountCircleIcon
           style={{ paddingTop: "30px", fontSize: "70px", color: "#087ec2" }}
         />
-        <h2 style={{ paddingTop: "10px" }}>Sign In</h2>
+        <h2 data-testid="signin-text" style={{ paddingTop: "10px" }}>Sign In</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <InputLabel
@@ -151,7 +153,7 @@ export default function SignIn() {
               }}
               errorText={inputErrors.passwordError}
               errorColor={{ color: "red", fontSize: "12px" }}
-              dataTestid={"password-input-element"}
+              dataTestid = {'password-input-element'}
             />
           </div>
           <Link
@@ -171,7 +173,8 @@ export default function SignIn() {
             style={{ textTransform: "none", width: "100px" }}
             color="primary"
             variant="contained"
-            dataTestid={"login-button-element"}
+            id="submitButton"   
+            name= "REDRED"         
           >
             {loading ? "Loading..." : "Sign In"}
           </Button>
